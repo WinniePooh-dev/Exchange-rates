@@ -2,6 +2,7 @@
 
 form{
     padding: ceil($normalPadding/2);
+    font-family: cursive;
 
     button{
         background-color: lighten($mainColor, 10%);
