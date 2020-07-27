@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+form{
+    padding: ceil($normalPadding/2);
+
+    button{
+        background-color: lighten($mainColor, 10%);
+        color: $textColorOnDarkBack;
+        margin: 3px;
+    };
+
+    input{
+        width: 5%;
+        margin: 3px;
+    }
+}

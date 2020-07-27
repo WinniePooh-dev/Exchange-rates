@@ -6,3 +6,10 @@ export const getUSD = USD => {
         payload: USD
     }
 }
+
+export const getEUR = EUR => {
+    return {
+        type: actionTypes.GET_EUR,
+        payload: EUR
+    }
+}

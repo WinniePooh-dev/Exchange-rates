@@ -1,0 +1,8 @@
+@import '../../variables.scss';
+
+.main-frame{
+    width: 30%;
+    background-color: $backgroundColor;
+    border: 1px solid darken($thirdColor, 20%);
+    border-radius: 3px;
+}
