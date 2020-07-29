@@ -13,3 +13,10 @@ export const getEUR = EUR => {
         payload: EUR
     }
 }
+
+export const getRUB = RUB => {
+    return {
+        type: actionTypes.GET_RUB,
+        payload: RUB
+    }
+}

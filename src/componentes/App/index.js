@@ -9,10 +9,11 @@ import './style.scss';
 
 const App = () => {
 
-    const dispatchUSD = useDispatch()
-    const dispatchEUR = useDispatch()
+    const dispatchUSD = useDispatch();
+    const dispatchEUR = useDispatch();
 
-    const [selected, setSelected] = useState({});
+    const [selected, setSelected] = useState([]);
+    const [count, setCount] = useState(0);
 
     useEffect(() => {
         Api.getCurrency().then((data) => {
@@ -26,23 +27,14 @@ const App = () => {
 
     const USD = useSelector(state => state.currencyReducer.USD);
     const EUR = useSelector(state => state.currencyReducer.EUR);
-
-    useEffect(() => {
-        if(USD) {
-            setSelected(USD)
-        }
-    }, [USD])
+    const RUB = useSelector(state => state.currencyReducer.RUB);
     
     return <div className={'main-frame'}>
-        <div>
-            {selected.Value}
+        <div className={'main-valute'}>
+            {RUB && `${(RUB.Value*count).toFixed(2)} \u20BD`}
         </div>
-        <div onClick={() => setSelected(USD)}>
-            <Form {...USD}/>
-        </div>
-        <div onClick={() => setSelected(EUR)}>
-            <Form {...EUR}/>
-        </div>
+        <Form valute={USD} setCount={setCount}/>
+        <Form valute={EUR} setCount={setCount}/>
     </div>
 }
 
