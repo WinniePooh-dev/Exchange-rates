@@ -3,6 +3,7 @@
 form{
     padding: ceil($normalPadding/2);
     font-family: cursive;
+    color: $errorColor;
 
     button{
         background-color: lighten($mainColor, 10%);
@@ -13,5 +14,17 @@ form{
     input{
         width: 5%;
         margin: 3px;
+    };
+
+    span{
+        color: $secondColor;
+    }
+
+    label{
+        font-size: $normalFontSize*1.3;
+    }
+
+    &:active{
+        opacity: .65;
     }
 }

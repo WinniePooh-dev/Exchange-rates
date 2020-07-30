@@ -9,5 +9,6 @@
     .main-valute {
         margin: $normalPadding;
         font-size: $normalFontSize*3;
+        color: darken($warningColor, 30%);
     }
 }

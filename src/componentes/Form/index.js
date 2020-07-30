@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 import './style.scss';
 
-export const Form = ({valute, setCount}) => {
+export const Form = ({valute, setCount, handleSelectEUR, handleSelectUSD}) => {
 
     const dispatch = useDispatch();
 
@@ -38,13 +38,15 @@ export const Form = ({valute, setCount}) => {
     return (
         <div onClick={() => {
             dispatch(getRUB((valute)));
-            setCount(value)
+            setCount(value);
+            handleSelectUSD && handleSelectUSD();
+            handleSelectEUR && handleSelectEUR();
         }}>
             <form onSubmit={handleSubmit}>
                 <input value={value} onChange={handleChange} type='text'/>
                 <button type='submit'>{valute.CharCode}</button>
                 <span>{valute.Name}</span>
-                {valute.CharCode === 'USD' ? ' \u0024' : ' \u20AC'}
+                <label>{valute.CharCode === 'USD' ? ' \u0024' : ' \u20AC'}</label>
             </form>
         </div>
     )
