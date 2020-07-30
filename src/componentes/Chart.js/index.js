@@ -15,7 +15,7 @@ export default class Chart extends Component {
                         </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <Tooltip />
+                    <Tooltip formatter={(value, name) => `${value.toFixed(2)} RUB`}/>
                     <Area type="monotone" dataKey="EUR" stroke="#28A76A" fillOpacity={1} fill="url(#color)" />
                     <Area type="monotone" dataKey="USD" stroke="#28A76A" fillOpacity={1} fill="url(#color)" />
                 </AreaChart>
